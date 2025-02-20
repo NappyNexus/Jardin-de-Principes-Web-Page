@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jdp_web/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,12 +8,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 60,
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-        leading: Image.asset('assets/Moms_logo-01.png'),
-        title: Text('JDP'),
-        // actions: [],
+        backgroundColor: bgbeige,
+        title: Text('Jardin de Principes'),
       ),
     );
   }
