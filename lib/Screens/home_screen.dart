@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:jdp_web/Widgets/nav_bar_button.dart';
 import 'package:jdp_web/Widgets/nav_bar_titles.dart';
 import 'package:jdp_web/colors.dart';
 
@@ -8,14 +10,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgbeige,
       appBar: AppBar(
         centerTitle: true,
-        leadingWidth: 300,
-        backgroundColor: Colors.amber,
+        leadingWidth: 350,
+        toolbarHeight: 70,
+        backgroundColor: bgbeige,
+        //bottom divider
         leading: SizedBox.expand(
           child: Center(
             child: Text(
-              'Jardin de Principes',
+              'JARDIN DE PRINCIPES',
               style: TextStyle(
                 fontFamily: 'Freshman',
                 color: jdpblue,
@@ -37,7 +42,37 @@ class HomeScreen extends StatelessWidget {
             NavBarTitles(title: 'About US', onTap: () {}),
           ],
         ),
-        actions: [],
+        actions: [
+          AppointmentButton(onPressed: () {}, text: 'Make Appointment'),
+        ],
+      ),
+      body: Column(
+        children: [
+          SizedBox(height: 2, child: Container(color: Color(0xFFdcdad6))),
+          //First section
+          Container(
+            color: Colors.deepPurpleAccent,
+            child: Row(
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      'Keep Learning\non Track',
+                      style: GoogleFonts.poppins(
+                        fontSize: 125,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text(
+                      'When schools and districts have reliable access to\nsubstitute teachers and subs have the freedom to\nchoose what and when they teach.',
+                      selectionColor: Colors.amber,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
