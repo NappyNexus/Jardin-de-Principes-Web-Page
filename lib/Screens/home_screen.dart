@@ -46,13 +46,13 @@ class HomeScreen extends StatelessWidget {
           AppointmentButton(onPressed: () {}, text: 'Make Appointment'),
         ],
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 2, child: Container(color: Color(0xFFdcdad6))),
-          //First section
-          Container(
-            color: Colors.deepPurpleAccent,
-            child: Row(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 2, child: Container(color: Color(0xFFdcdad6))),
+            SizedBox(height: 30),
+            //First section
+            Row(
               children: [
                 Column(
                   children: [
@@ -65,14 +65,14 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Text(
                       'When schools and districts have reliable access to\nsubstitute teachers and subs have the freedom to\nchoose what and when they teach.',
-                      selectionColor: Colors.amber,
+                      style: GoogleFonts.poppins(fontSize: 20),
                     ),
                   ],
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
