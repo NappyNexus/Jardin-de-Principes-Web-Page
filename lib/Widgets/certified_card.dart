@@ -75,7 +75,7 @@ class CertifiedCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: -135,
+          left: 0,
           top: -20,
           child: Image.asset('assets/teacher.png', height: 400),
         ),
