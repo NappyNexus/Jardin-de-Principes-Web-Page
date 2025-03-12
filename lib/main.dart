@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jdp_web/Widgets/custom_shape_square.dart';
+import 'package:jdp_web/Widgets/kid_books.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Test(),
+      home: KidBooks(),
     );
   }
 }
