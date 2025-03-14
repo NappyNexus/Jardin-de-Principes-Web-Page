@@ -21,26 +21,36 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 30),
             //First section
             Row(
+              mainAxisSize: MainAxisSize.max,
               children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  //crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Keep Learning\non Track',
-                      style: GoogleFonts.poppins(
-                        fontSize: 125,
-                        fontWeight: FontWeight.w700,
+                Container(
+                  color: Colors.amber,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Keep Learning\non Track',
+                        style: GoogleFonts.poppins(
+                          fontSize: 125,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
-                    ),
-                    Text(
-                      'When schools and districts have reliable access to\nsubstitute teachers and subs have the freedom to\nchoose what and when they teach.',
-                      style: GoogleFonts.poppins(fontSize: 20),
-                    ),
-                    Row(children: [CertifiedCard(), TransformingCard()]),
-                  ],
+                      Text(
+                        'When schools and districts have reliable access to\nsubstitute teachers and subs have the freedom to\nchoose what and when they teach.',
+                        style: GoogleFonts.poppins(fontSize: 20),
+                      ),
+                      Row(
+                        children: [
+                          Container(color: Colors.blue),
+                          CertifiedCard(),
+                          // TransformingCard(),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                Column(children: [KidBooks()]),
+                //Column(children: [KidBooks()]),
               ],
             ),
           ],

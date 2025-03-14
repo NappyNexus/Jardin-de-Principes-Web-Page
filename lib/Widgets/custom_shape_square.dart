@@ -5,40 +5,35 @@ class Test extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: Stack(
-            children: [
-              // Big Square with Rounded Cutout
-              ClipPath(
-                clipper: RoundedCutoutClipper(),
-                child: Container(
-                  width: 350,
-                  height: 330,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFefefef),
-                    borderRadius: BorderRadius.circular(20), // Rounded corners
-                  ),
-                ),
+    return Center(
+      child: Stack(
+        children: [
+          // Big Square with Rounded Cutout
+          ClipPath(
+            clipper: RoundedCutoutClipper(),
+            child: Container(
+              width: 350,
+              height: 330,
+              decoration: BoxDecoration(
+                color: Color(0xFFefefef),
+                borderRadius: BorderRadius.circular(20), // Rounded corners
               ),
-              // Small Square (Separate)
-              Positioned(
-                top: 5, // Offset slightly for rounded effect
-                right: 5,
-                child: Container(
-                  width: 85,
-                  height: 85,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFefefef),
-                    borderRadius: BorderRadius.circular(15), // Rounded corners
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+          // Small Square (Separate)
+          Positioned(
+            top: 5, // Offset slightly for rounded effect
+            right: 5,
+            child: Container(
+              width: 85,
+              height: 85,
+              decoration: BoxDecoration(
+                color: Color(0xFFefefef),
+                borderRadius: BorderRadius.circular(15), // Rounded corners
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

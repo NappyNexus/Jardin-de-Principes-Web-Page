@@ -6,87 +6,79 @@ class TransformingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: Stack(
-            children: [
-              // Big Square with Rounded Cutout
-              ClipPath(
-                clipper: RoundedCutoutClipper(),
-                child: Container(
-                  width: 350,
-                  height: 330,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFefefef),
-                    borderRadius: BorderRadius.circular(20), // Rounded corners
-                  ),
-                  child: Stack(
+    return Center(
+      child: Stack(
+        children: [
+          // Big Square with Rounded Cutout
+          ClipPath(
+            clipper: RoundedCutoutClipper(),
+            child: Container(
+              width: 350,
+              height: 330,
+              decoration: BoxDecoration(
+                color: Color(0xFFefefef),
+                borderRadius: BorderRadius.circular(20), // Rounded corners
+              ),
+              child: Stack(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20, left: 20),
-                            child: Container(
-                              height: 120,
-                              width: 210,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Color(0xFFefefef),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/kid_board.jpg'),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20, left: 20),
+                        child: Container(
+                          height: 120,
+                          width: 210,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Color(0xFFefefef),
+                            image: DecorationImage(
+                              image: AssetImage('assets/kid_board.jpg'),
+                              fit: BoxFit.cover,
                             ),
                           ),
-
-                          SizedBox(height: 20),
-
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20),
-                            child: Text(
-                              'Transforming schools\n and substitute\n teachers',
-                              style: GoogleFonts.poppins(
-                                fontSize: 27,
-                                color: Color(0xFF2d2d2d),
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
-                      Positioned(
-                        bottom: 10,
-                        right: 10,
-                        child: Image.asset(
-                          'assets/green_starline.png',
-                          width: 70,
+
+                      SizedBox(height: 20),
+
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Text(
+                          'Transforming schools\n and substitute\n teachers',
+                          style: GoogleFonts.poppins(
+                            fontSize: 27,
+                            color: Color(0xFF2d2d2d),
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ],
                   ),
-                ),
-              ),
-              // Small Square (Separate)
-              Positioned(
-                top: 5, // Offset slightly for rounded effect
-                right: 5,
-                child: Container(
-                  width: 85,
-                  height: 85,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFefefef),
-                    borderRadius: BorderRadius.circular(15), // Rounded corners
+                  Positioned(
+                    bottom: 10,
+                    right: 10,
+                    child: Image.asset('assets/green_starline.png', width: 70),
                   ),
-                  child: Image.asset('assets/orange_arrow.png', scale: 1.3),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
+          // Small Square (Separate)
+          Positioned(
+            top: 5, // Offset slightly for rounded effect
+            right: 5,
+            child: Container(
+              width: 85,
+              height: 85,
+              decoration: BoxDecoration(
+                color: Color(0xFFefefef),
+                borderRadius: BorderRadius.circular(15), // Rounded corners
+              ),
+              child: Image.asset('assets/orange_arrow.png', scale: 1.3),
+            ),
+          ),
+        ],
       ),
     );
   }
